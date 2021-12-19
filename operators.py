@@ -17,7 +17,7 @@ class Operator(ABC):
 
 
 class UnaryOperator(Operator):
-    def __init__(self, variable : Operator) -> None:
+    def __init__(self, variable) -> None:
         if (isinstance(variable, list)):
             log.debug(f'variable passed to {self.__class__.__name__} init is a list')
         self.value : Operator or str = variable
@@ -27,7 +27,7 @@ class UnaryOperator(Operator):
 
 
 class BinaryOperator(Operator):
-    def __init__(self, variable1 : Operator or str, variable2 : Operator or str) -> None:
+    def __init__(self, variable1, variable2) -> None:
         if (isinstance(variable1, list)):
             log.debug(f'variable1 passed to {self.__class__.__name__} init is a list')
         if (isinstance(variable2, list)):
