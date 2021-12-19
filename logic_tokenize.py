@@ -1,5 +1,6 @@
 import re
 import logging as log
+
 def logic_tokenize(expression: str) -> list[str]:
     ops = ["and", "or", "not", "(", ")"]
     expression = re.split('(\s+|\(|\))', expression)
